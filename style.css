@@ -1,0 +1,288 @@
+/* Global styles */
+body {
+    font-family: 'Boulder', sans-serif;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #d4eac6, #cbd8e3); /* Initial gradient background */
+    animation: gradientAnimation 10s linear infinite alternate; /* Animation for gradient background */
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%; /* Initial background position */
+    }
+    100% {
+      background-position: 100% 50%; /* Final background position */
+    }
+  }
+  
+  h1, h2, h3 {
+    color: #ffffff; /* White */
+  }
+  
+  a {
+    color: #ffffff; /* White */
+    text-decoration: none;
+  }
+
+  .title-column {
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  .content-column {
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+  
+  /* Section styles */
+  section {
+    position: relative;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background: none; /* Remove background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+    transition: padding 0.3s ease, margin-bottom 0.3s ease; /* Add transitions for smooth hover effect */
+    display: flex; /* Display sections as flex containers */
+  }
+  
+  section:hover {
+    padding: 60px 40px; /* Increased padding on hover */
+    margin-bottom: 20px; /* Decreased margin-bottom on hover */
+  }
+  
+  /* Section title styles */
+  section h2 {
+    border-bottom: 10px solid #7ac142; /* Lime green */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: right; /* Align section titles to the right */
+    margin-right: 20px; /* Add margin to the right */
+    transition: width 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  section:hover h2 {
+    border-bottom-width: 70%; /* Set the width of the border-bottom on hover */
+  }
+  
+  /* Section content styles */
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    flex: 1; /* Take up remaining space */
+    margin-right: 20px; /* Add margin to the right */
+  }
+  
+  .section-content p {
+    margin: 20px 0; /* Add margin between section title and content */
+  }
+  
+  /* Header styles */
+  header {
+    background: #1f345e; /* Solid dark blue */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff; /* White */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navigation styles */
+  header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-left: 10px;
+  }
+  
+  header nav ul li a {
+    color: #ffffff; /* White */
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  header nav ul li a:hover {
+    color: #7ac142; /* Lime green */
+  }
+  
+  /* About Me styles */
+  #about {
+    text-align: right; /* Align text to the right */
+    flex-direction: row-reverse; /* Reverse the order of flex items */
+  }
+  
+  #about p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  #about p:last-child {
+    margin-bottom: 0;
+  }
+  
+  #about p::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 2in;
+    right: 2in;
+    height: 5px;
+    background-color: #7ac142; /* Lime green */
+    display: none; /* Hide the line */
+  }
+  
+  #about p:hover::before {
+    background-color: #ffffff; /* White */
+    display: none; /* Hide the line on hover */
+  }
+  
+  /* Work sample styles */
+  .work {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+  
+  .work-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c4b4b4; /* White background */
+    color: #333333; /* Dark gray text color */
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .work-item:hover {
+    transform: translateY(-5px); /* Add a subtle hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .work-item img {
+    width: 70%;
+    object-fit: cover;
+  }
+  
+  .title-box {
+    background-color: #c4b4b4(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow box effect */
+  }
+  
+  .title-box h3 {
+    margin: 0;
+  }
+  
+  .work-item .textbox {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Overlay styles */
+  .work-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .work-item:hover::before {
+    opacity: 0; /* Remove overlay on hover */
+  }
+  
+/* Contact styles */
+#contact {
+    text-align: left; /* Align content to the right */
+    flex-direction: row-reverse; /* Reverse the order of flex items */
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  #contact p {
+    font-weight: bold;
+  }
+  
+  #contact .section-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align content to the right */
+  }
+  
+  #contact .content-column {
+    margin-left: 50px; /* Adjust the margin as needed */
+  }
+  
+  #contact .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #contact .social-links p {
+    margin: 0;
+  }
+  
+  #contact .social-links a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  
+  footer {
+    background: #1f345e; /* Solid dark blue */
+    padding: 20px;
+    color: #ffffff; /* White */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  footer nav ul li {
+    margin-left: 10px;
+  }
+  
+  footer nav ul li a {
+    color: #ffffff; /* White */
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  footer nav ul li a:hover {
+    color: #7ac142; /* Lime green */
+  }
